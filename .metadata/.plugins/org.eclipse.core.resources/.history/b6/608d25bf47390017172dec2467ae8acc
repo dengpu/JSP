@@ -1,0 +1,11 @@
+package bbsDTO;
+
+public class BbsDto {
+private int bbsID;
+private String userID;
+private Datetime bbsDate;
+private String bbsContent;
+private int bbsAvailable;
+	
+	
+}

@@ -12,51 +12,47 @@ public class UserDao {
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
-	
-	 public UserDao(){
+
+	public UserDao() {
 		try {
 			String dbURL = "jdbc:mysql://localhost:3306/bbs";
 			String dbID = "root";
 			String dbPassword = "1234";
-			
-			
+
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(dbURL,dbID,dbPassword);
-			
+			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	 }
-	 
-	 public int login(String userID, String userPassword){
-		 String SQL = "SELECT userPassword FROM user WHERE userID = ?";
-		 
-		 
-		 try {
+	}
+
+	public int login(String userID, String userPassword) {
+		String SQL = "SELECT userPassword FROM user WHERE userID = ?";
+
+		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userID);
 			rs = pstmt.executeQuery();
-			
-			if(rs.next()){
-				if(rs.getString(1).equals(userPassword)){
-					return 1; //Login成功
+
+			if (rs.next()) {
+				if (rs.getString(1).equals(userPassword)) {
+					return 1; // Login成功
+				} else {
+					return 0; // Passwordの間違い
 				}
-				else{
-					return 0; //Passwordの間違い
-				}
-				
+
 			}
-			return -1; //IDがなし
-			
-			 
+			return -1; // IDがなし
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		 return -2; //データベース　エラー
-		 
-	 }
-	 
-	 public int join(UserDto user){
+		return -2; // データベース エラー
+
+	}
+
+	public int join(UserDto user) {
 		String SQL = "INSERT INTO user VALUES (?,?,?,?);";
 		System.out.println(user.getUserEmail());
 		System.out.println(22222222);
@@ -69,12 +65,12 @@ public class UserDao {
 			pstmt.setString(3, user.getUserName());
 			pstmt.setString(4, user.getUserEmail());
 			return pstmt.executeUpdate();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		 return -1;//DBエラー IDがすでに存在する場合
-	 }
-	
+
+		return -1;// DBエラー IDがすでに存在する場合
+	}
+
 }

@@ -9,7 +9,12 @@
 location.href = 'main.jsp';
 </script>
 
+
+
+
 </head>
 <body>
+
+
 </body>
 </html>

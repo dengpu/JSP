@@ -35,6 +35,7 @@
 				<li><a href="bbs.jsp">掲示板</a></li>
 			</ul>
 
+
 			<%
 				if (ID == null) {
 			%>
@@ -70,7 +71,16 @@
 
 		</div>
 	</nav>
-
+	
+	<div align=center>
+		<img src="img/USEN.png" style="width: 320px; height: auto;">
+	
+	<h2>みんなで作る物語</h2>
+	<h2>みんなの日記にようこそ！</h2>
+	<h2>誰でも自由に書き込みが可能です！</h2>
+	</div>
+	
+	
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 
