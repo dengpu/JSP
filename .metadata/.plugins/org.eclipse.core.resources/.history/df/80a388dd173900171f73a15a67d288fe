@@ -1,0 +1,5 @@
+package userDTO;
+
+public class User {
+
+}

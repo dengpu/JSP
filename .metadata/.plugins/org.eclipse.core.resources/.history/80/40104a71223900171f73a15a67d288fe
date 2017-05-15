@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="userDAO.UserDao" %>
+<%@ page import="userDTO.UserDto" %>
+<%request.setCharacterEncoding("UTF-8"); %>
+
+<jsp:useBean id="uDAO" class="userDAO.UserDao" scope="page"/>
+<jsp:useBean id="uDTO" class="userDTO.UserDto" scope="page"/>
+
+<jsp:setProperty name="uDTO" property="userID"/>
+<jsp:setProperty name="uDTO" property="userPassword"/>
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JSP 掲示板</title>
+</head>
+<body>
+<%=uDTO.getUserID();
+	uDTO.getUserPassword();
+%>
+ass
+<
+
+
+</body>
+</html>

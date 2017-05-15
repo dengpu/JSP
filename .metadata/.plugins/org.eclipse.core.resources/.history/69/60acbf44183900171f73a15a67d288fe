@@ -1,0 +1,13 @@
+package userDAO;
+
+import java.sql.ResultSet;
+
+import com.mysql.jdbc.PreparedStatement;
+
+public class UserDao {
+
+	private Connetcion conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
+}
