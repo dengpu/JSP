@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import userDTO.UserDto;
+
 public class UserDao {
 
 	private Connection conn;
@@ -52,6 +54,27 @@ public class UserDao {
 		}
 		 return -2; //データベース　エラー
 		 
+	 }
+	 
+	 public int join(UserDto user){
+		String SQL = "INSERT INTO user VALUES (?,?,?,?);";
+		System.out.println(user.getUserEmail());
+		System.out.println(22222222);
+		System.out.println(user.getUserID());
+
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, user.getUserID());
+			pstmt.setString(2, user.getUserPassword());
+			pstmt.setString(3, user.getUserName());
+			pstmt.setString(4, user.getUserEmail());
+			return pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		 return -1;//DBエラー IDがすでに存在する場合
 	 }
 	
 }

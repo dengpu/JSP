@@ -11,20 +11,37 @@
 
 <jsp:setProperty name="uDTO" property="userID" />
 <jsp:setProperty name="uDTO" property="userPassword" />
+
+
+
 <!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>JSP 掲示板</title>
+<title>みんなの日記</title>
 </head>
 <body>
 
 	<%
+		String ID = null;
+		if (session.getAttribute("ID") != null) {
+		
+			ID = (String) session.getAttribute("ID");
+		}
+		if (ID != null) {
+			out.println("<script>");
+			out.println("alert('すでにログイン中です。')");
+			out.println("location.href='main.jsp'");
+			out.println("</script>");
+		}
+		
+
 		UserDao user = new UserDao();
 
 		int result = user.login(uDTO.getUserID(), uDTO.getUserPassword());
 
 		if (result == 1) {
+			session.setAttribute("ID", uDTO.getUserID());
 			out.println("<script>");
 			out.println("location.href = 'main.jsp'");
 			out.println("</script>");

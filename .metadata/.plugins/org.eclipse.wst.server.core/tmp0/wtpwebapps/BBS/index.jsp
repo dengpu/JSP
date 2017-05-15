@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>初期画面</title>
+<title>みんなの日記</title>
 <script>
-location.href = 'login.jsp';
+location.href = 'main.jsp';
 </script>
 
 </head>

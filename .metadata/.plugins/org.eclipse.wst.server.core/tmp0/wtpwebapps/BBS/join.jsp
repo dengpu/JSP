@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/bootstrap.css">
-<title>JSP 掲示板</title>
+<title>みんなの日記</title>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -18,7 +18,7 @@
 					class="icon-bar"></span>
 
 			</button>
-			<a class="navbar-brand" href="main.jsp">JSP 掲示板</a>
+			<a class="navbar-brand" href="main.jsp">みんなの日記</a>
 		</div>
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
